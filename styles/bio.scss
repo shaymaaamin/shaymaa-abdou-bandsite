@@ -1,0 +1,452 @@
+body {
+  margin: 0px;
+}
+@media (min-width: 768px) {
+  .topnav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0px;
+    width: 100%;
+    background-color: #323232;
+  }
+
+  .topnav__title {
+    color: white;
+    text-transform: uppercase;
+    align-self: center;
+    padding: 30px;
+  }
+
+  .topnav__link {
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+  }
+
+  .hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    text-transform: capitalize;
+  }
+
+  .hero__container {
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.5);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__title {
+    padding: 85px;
+    padding-left: 60px;
+    font-size: 50px;
+  }
+  .topnav__link--active {
+    border-bottom: white solid 5px;
+    padding: 30px;
+  }
+
+  .hero2 {
+    background-color: lightgray;
+
+    .hero2__content {
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    .gallery__img {
+      width: 30%;
+      margin: 10px 0px;
+    }
+  }
+  .party__img {
+    width: 75%;
+  }
+  .band__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .band__info {
+    font-weight: bolder;
+    font-size: larger;
+    width: 50%;
+    padding-left: 10px;
+  }
+  .party__lead {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .description {
+    margin-left: 45px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .description__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .description__inner > div:first-child {
+    margin-right: 20px;
+  }
+  .description__inner > div:last-child {
+    margin-left: 20px;
+  }
+  .page__container {
+    width: 80%;
+    margin: auto;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .party {
+    margin-left: 45px;
+  }
+
+  footer {
+    color: white;
+    background-color: #323232;
+    margin: 50px auto 0px auto;
+    height: 250px;
+
+    .icon {
+      height: 30px;
+      width: 50px;
+      margin-top: 15px;
+    }
+    .footer__info {
+      display: flex;
+      flex-direction: row;
+      width: 75%;
+    }
+    .footer__contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+    }
+    .footer__inner {
+      width: 35%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  span {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 1280px) {
+  .topnav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0px;
+    width: 100%;
+    background-color: #323232;
+  }
+
+  .topnav__title {
+    color: white;
+    text-transform: uppercase;
+    align-self: center;
+    padding: 30px;
+  }
+
+  .topnav__link {
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+  }
+
+  .hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    text-transform: capitalize;
+  }
+
+  .hero__container {
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.5);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__title {
+    padding: 85px;
+    padding-left: 60px;
+    font-size: 50px;
+  }
+  .topnav__link--active {
+    border-bottom: white solid 5px;
+    padding: 30px;
+  }
+
+  .hero2 {
+    background-color: lightgray;
+
+    .hero2__content {
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    .gallery__img {
+      width: 30%;
+      margin: 10px 0px;
+    }
+  }
+  .party__img {
+    width: 75%;
+  }
+  .band__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .band__info {
+    font-weight: bolder;
+    font-size: larger;
+    width: 50%;
+    padding-left: 10px;
+  }
+  .party__lead {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .description {
+    margin-left: 45px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .description__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .description__inner > div:first-child {
+    margin-right: 20px;
+  }
+  .description__inner > div:last-child {
+    margin-left: 20px;
+  }
+  .page__container {
+    width: 80%;
+    margin: auto;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .party {
+    margin-left: 45px;
+  }
+
+  footer {
+    color: white;
+    background-color: #323232;
+    margin: 50px auto 0px auto;
+    height: 250px;
+
+    .icon {
+      height: 30px;
+      width: 50px;
+      margin-top: 15px;
+    }
+    .footer__info {
+      display: flex;
+      flex-direction: row;
+      width: 75%;
+    }
+    .footer__contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+    }
+    .footer__inner {
+      width: 35%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  span {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .topnav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0px;
+    width: 100%;
+    background-color: #323232;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .topnav__title {
+    color: white;
+    text-transform: uppercase;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .topnav__link {
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    text-transform: capitalize;
+  }
+
+  .hero__container {
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.5);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__title {
+    padding: 85px;
+    padding-left: 60px;
+    font-size: 50px;
+  }
+  .topnav__link--active {
+    border-bottom: white solid 5px;
+    padding: 30px;
+  }
+
+  .hero2 {
+    background-color: lightgray;
+
+    .hero2__content {
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    .gallery__img {
+      width: 30%;
+      margin: 10px 0px;
+    }
+  }
+  .party__img {
+    width: 75%;
+  }
+  .band__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .band__info {
+    font-weight: bolder;
+    font-size: larger;
+    width: 50%;
+    padding-left: 10px;
+  }
+  .party__lead {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .description {
+    margin-left: 45px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .description__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .description__inner > div:first-child {
+    margin-right: 20px;
+  }
+  .description__inner > div:last-child {
+    margin-left: 20px;
+  }
+  .page__container {
+    width: 80%;
+    margin: auto;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .party {
+    margin-left: 45px;
+  }
+
+  footer {
+    color: white;
+    background-color: #323232;
+    margin: 50px auto 0px auto;
+    height: 250px;
+
+    .icon {
+      height: 30px;
+      width: 50px;
+      margin-top: 15px;
+    }
+    .footer__info {
+      display: flex;
+      flex-direction: row;
+      width: 75%;
+    }
+    .footer__contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+    }
+    .footer__inner {
+      width: 35%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  span {
+    margin-bottom: 50px;
+  }
+}
