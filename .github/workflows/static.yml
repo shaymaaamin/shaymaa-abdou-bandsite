@@ -34,7 +34,7 @@ jobs:
       - name: Sass Build
         uses: gha-utilities/sass-build@v0.5.1
         with:
-          source: styles/bion.scss
+          source: styles/bio.scss
           destination: styles/bio.css
       - name: Setup Pages
         uses: actions/configure-pages@v3
