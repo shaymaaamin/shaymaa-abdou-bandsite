@@ -1,0 +1,126 @@
+@import "./partials/fonts";
+@import "./partials/footer";
+@import "./partials/global";
+@import "./partials/hero";
+@import "./partials/topnav";
+@import "./partials/vars";
+
+.hero__wrapper {
+  background-image: url("../assets/images/hero-shows.jpg");
+}
+
+.shows_wrapper {
+  .shows {
+    .shows__inner {
+      .show__wrapper {
+        .show__header {
+          color: $color-silver;
+        }
+
+        .show__value {
+          margin-bottom: $gutter-xs;
+
+          &:first-of-type {
+            font-weight: $fw-bold;
+          }
+        }
+        .show__button {
+          color: $color-white;
+          background-color: $color-black;
+          text-transform: uppercase;
+          text-align: center;
+          border: 0px;
+          font-weight: $fw-bold;
+          font-size: $fs-xs;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobileMaxWidth) {
+  .shows {
+    margin: 0px;
+    padding-top: $gutter-xs;
+    .shows__title {
+      margin: 0px $gutter-xs;
+    }
+    .shows__inner {
+      margin-bottom: $gutter-xs;
+      .show__wrapper {
+        padding: $gutter-xs;
+        border-bottom: 2px solid $color-mercury;
+
+        &:first-child {
+          display: none;
+        }
+
+        .show__header {
+          margin: 0px;
+        }
+
+        .show__button {
+          width: 100%;
+          padding: $gutter-xs;
+          border-radius: calc($gutter-xs / 2);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) {
+  .shows {
+    padding-top: $gutter-sm;
+    .shows__inner {
+      margin-bottom: $gutter-lg;
+      .show__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: $gutter-sm 0px;
+
+        &:not(:first-child) {
+          border-bottom: 2px solid $color-mercury;
+          .show__header {
+            display: none;
+          }
+        }
+
+        .show__header,
+        .show__value,
+        .show__button {
+          width: 20%;
+          margin: 0px 2.5%;
+        }
+
+        .show__button {
+          padding: $gutter-xs;
+          border-radius: calc($gutter-xs / 2);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktopMinWidth) {
+  .shows {
+    .shows__title {
+      width: 25%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .shows__inner {
+      width: 75%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+.show__wrapper:hover {
+  background-color: $color-alabaster;
+}
+.show__wrapper--selected {
+  background-color: $color-mercury;
+}

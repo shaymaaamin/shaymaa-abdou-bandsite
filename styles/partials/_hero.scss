@@ -1,0 +1,40 @@
+.hero__wrapper {
+  color: $color-white;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  .hero__backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: $mobileMaxWidth) {
+  .hero__wrapper {
+    height: 300px;
+    .hero {
+      margin: 0px $gutter-xs;
+      .hero__title {
+        max-width: 60%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) {
+  .hero__wrapper {
+    height: 500px;
+  }
+}

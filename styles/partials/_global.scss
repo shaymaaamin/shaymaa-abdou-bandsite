@@ -1,0 +1,71 @@
+@import "./vars";
+
+body {
+  margin: 0px;
+  font-family: "Avenir Next";
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 0px;
+  }
+
+  h1,
+  h2 {
+    font-weight: $fw-bold;
+  }
+
+  h3 {
+    font-weight: $fw-demi;
+  }
+}
+
+@media screen and (max-width: $mobileMaxWidth) {
+  h1 {
+    font-size: $fs-sm;
+    line-height: calc($fs-sm + 0.5rem);
+  }
+  h2 {
+    font-size: $fs-sm;
+    line-height: calc($fs-sm + 0.5rem);
+  }
+  h3 {
+    font-size: $fs-xs;
+    line-height: calc($fs-xs + 0.5rem);
+  }
+
+  .page__section {
+    flex-direction: column;
+    margin: 0px $gutter-xs;
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) {
+  h1 {
+    font-size: $fs-lg;
+    line-height: calc($fs-lg + 0.5rem);
+  }
+
+  h2 {
+    font-size: $fs-md;
+    line-height: calc($fs-md + 0.5rem);
+  }
+
+  h3 {
+    font-size: $fs-sm;
+    line-height: calc($fs-sm + 0.5rem);
+  }
+
+  .page__section {
+    flex-direction: row;
+    margin: 0px $gutter-sm;
+  }
+}
+
+@media screen and (min-width: $desktopMinWidth) {
+  .page__section {
+    width: 1020px;
+    flex-direction: row;
+    margin: auto;
+  }
+}

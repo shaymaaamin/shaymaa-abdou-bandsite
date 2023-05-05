@@ -1,0 +1,126 @@
+.footer__wrapper {
+  color: $color-white;
+  background-color: $color-black;
+
+  .footer {
+    .footer__social-wrapper {
+      .footer__social {
+        padding: $gutter-sm 0px;
+        .footer__social-title {
+          margin: 0px;
+          padding-bottom: $gutter-sm;
+        }
+        .footer__social-icon-wrapper {
+          display: flex;
+          justify-content: space-between;
+          width: 150px;
+
+          .footer__social-icon {
+            height: 30px;
+          }
+        }
+      }
+    }
+
+    .footer__contact-wrapper {
+      .footer__contact {
+        margin-bottom: $gutter-md;
+
+        .footer__contact-name,
+        .footer__contact-company {
+          font-size: $fs-xs;
+          margin: calc($gutter-xs / 2) 0px;
+        }
+
+        .footer__contact-info {
+          margin: $gutter-xs 0px;
+
+          p {
+            margin: 0px;
+          }
+        }
+
+        .footer__contact-email {
+          margin: calc($gutter-xs / 2) 0px;
+          color: $color-white;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    > .footer__logo {
+      margin: $gutter-xs 0px;
+    }
+
+    .footer__copyright {
+      font-size: calc($fs-xs / 1.25);
+    }
+  }
+}
+
+@media screen and (max-width: $mobileMaxWidth) {
+  .footer {
+    .footer__social-wrapper {
+      > .footer__logo {
+        display: none;
+      }
+    }
+    > .footer__logo {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $tabletMinWidth) {
+  .footer {
+    .footer__social-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: $gutter-sm;
+
+      > .footer__logo {
+        display: block;
+      }
+
+      .footer__social {
+        display: flex;
+
+        .footer__social-title {
+          padding: 0px;
+        }
+        .footer__social-icon-wrapper {
+          margin-left: $gutter-sm;
+        }
+      }
+    }
+    .footer__contact-wrapper {
+      display: flex;
+      .footer__contact {
+        margin-right: $gutter-sm;
+      }
+    }
+    > .footer__logo {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: $desktopMinWidth) {
+  .footer {
+    .footer__social-wrapper {
+      padding-top: $gutter-md;
+      .footer__social {
+        .footer__social-icon-wrapper {
+          margin-left: $gutter-md;
+        }
+      }
+    }
+    .footer__contact-wrapper {
+      .footer__contact {
+        margin-right: $gutter-lg;
+      }
+    }
+  }
+}

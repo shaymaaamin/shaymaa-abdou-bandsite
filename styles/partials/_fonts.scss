@@ -1,0 +1,17 @@
+@import "./vars";
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: $fw-regular;
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: $fw-demi;
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: $fw-bold;
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+}
