@@ -10,7 +10,7 @@
 @import "./partials/vars";
 
 .hero__wrapper {
-  background-image: url("/assets/images/hero-shows.jpg");
+  background-image: url("../assets/images/hero-shows.jpg");
   .hero__soundcloud {
     width: 50%;
     border-radius: calc($gutter-xs / 2);
