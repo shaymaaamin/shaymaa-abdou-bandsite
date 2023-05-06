@@ -1,4 +1,6 @@
 @import "./partials/global";
+@import "./partials/forms";
+@import "./partials/table";
 
 @import "./partials/topnav";
 @import "./partials/hero";
@@ -41,71 +43,18 @@
 
     .shows__inner {
       margin-bottom: $gutter-xs;
-      width: 100%;
+      flex: 1;
 
       @include tablet {
         margin-bottom: $gutter-lg;
       }
 
-      @include desktop {
-        width: 75%;
-      }
-
-      .show__wrapper {
-        padding: $gutter-xs;
-        border-bottom: 2px solid $color-mercury;
-
-        @include tablet {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          padding: $gutter-sm 0px;
-        }
-
-        &:first-child {
-          display: none;
-
-          @include tablet {
-            display: flex;
-          }
-        }
-
-        &:not(:first-child) {
-          @include tablet {
-            border-bottom: 2px solid $color-mercury;
-
-            .show__header {
-              display: none;
+      .shows__table {
+        .table__row {
+          .table__cell:first-child {
+            .table__cell-content {
+              font-weight: $fw-demi;
             }
-          }
-        }
-
-        .show__header {
-          color: $color-silver;
-          margin: 0px;
-
-          @include tablet {
-            width: 20%;
-            margin: 0px 2.5%;
-          }
-        }
-
-        .show__value {
-          margin-bottom: $gutter-xs;
-
-          &:first-of-type {
-            font-weight: $fw-bold;
-          }
-
-          @include tablet {
-            width: 20%;
-            margin: 0px 2.5%;
-          }
-        }
-        .show__button {
-          width: 100%;
-          @include tablet {
-            width: 20%;
           }
         }
       }

@@ -1,27 +1,3 @@
-function createElement(parentElement, tagName, className) {
-  let child = document.createElement(tagName);
-  child.classList.add(className);
-  parentElement.appendChild(child);
-
-  return child;
-}
-
-let wrapper = document.querySelector(".shows_wrapper");
-let section = createElement(wrapper, "section", "shows");
-section.classList.add("page__section");
-let aboutTitle = createElement(section, "h2", "shows__title");
-aboutTitle.innerText = "Shows";
-let showsInner = createElement(section, "section", "shows__inner");
-
-let headerWrapper = createElement(showsInner, "div", "show__wrapper");
-let dateHeader = createElement(headerWrapper, "h4", "show__header");
-dateHeader.innerText = "DATE";
-let venueHeader = createElement(headerWrapper, "h4", "show__header");
-venueHeader.innerText = "VENUE";
-let locationHeader = createElement(headerWrapper, "h4", "show__header");
-locationHeader.innerText = "LOCATION";
-let buttonHeader = createElement(headerWrapper, "h4", "show__header");
-
 let shows = [
   {
     DATE: "Mon Sept 06 2021",
@@ -59,29 +35,55 @@ shows.forEach(function (show) {
   addShow(show.DATE, show.VENUE, show.LOCATION);
 });
 
-function addShow(date, venue, location) {
-  let card = createElement(showsInner, "div", "show__wrapper");
+function addTableCell(row, label = '', value = '') {
+  const cell = document.createElement('div');
+  cell.classList.add('table__cell');
+  row.appendChild(cell);
 
-  let title1 = createElement(card, "h4", "show__header");
-  title1.innerText = "DATE";
-  let value1 = createElement(card, "div", "show__value");
-  value1.innerText = date;
+  const header = document.createElement('div');
+  header.classList.add('table__cell-header');
+  header.innerText = label;
+  cell.appendChild(header);
 
-  let title2 = createElement(card, "h4", "show__header");
-  title2.innerText = "VENUE";
-  let value2 = createElement(card, "div", "show__value");
-  value2.innerText = venue;
+  const content = document.createElement('div');
+  content.classList.add('table__cell-content');
+  content.innerText = value;
+  cell.appendChild(content);
 
-  let title3 = createElement(card, "h4", "show__header");
-  title3.innerText = "LOCATION";
-  let value3 = createElement(card, "div", "show__value");
-  value3.innerText = location;
-
-  let button = createElement(card, "button", "show__button");
-  button.innerText = "Buy Tickets";
+  return cell;
 }
-let card = document.querySelector(".shows__wrapper");
-let selection = document.querySelector(".shows__button");
-selection.addEventListener("click", () => {
-  card.classList.add(".show__wrapper--selected");
-});
+
+function addTableButton(row, label = '') {
+  const cell = document.createElement('div');
+  cell.classList.add('table__cell');
+  row.appendChild(cell);
+
+  const button = document.createElement('button');
+  button.classList.add('table__cell-button');
+  button.innerText = label;
+  cell.appendChild(button);
+
+  return cell;
+}
+
+function addShow(date, venue, location) {
+  const table_body = document.querySelector(".shows__table .table__body");
+
+  // create row
+  const newRow = document.createElement('div');
+  newRow.classList.add('table__row');
+  table_body.appendChild(newRow);
+
+  addTableCell(newRow, 'DATE', date);
+  addTableCell(newRow, 'VENUE', venue);
+  addTableCell(newRow, 'LOCATION', location);
+  addTableButton(newRow, 'Buy Tickets');
+
+  newRow.addEventListener('click', (event) => {
+    const all_rows = table_body.querySelectorAll('.table__row');
+    all_rows.forEach(row => {
+      row.classList.remove('table__row--selected');
+    });
+    newRow.classList.add('table__row--selected');
+  })
+}

@@ -1,0 +1,61 @@
+@import "./breakpoints";
+@import "./vars";
+
+.table {
+  .table__header-cell,
+  .table__cell-header {
+    color: $color-silver;
+    font-weight: $fw-demi;
+    flex: 1;
+  }
+
+  .table__header {
+    display: none;
+    padding: $gutter-sm calc($gutter-sm * 0.75);
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .table__row {
+    padding: $gutter-xs;
+    cursor: pointer;
+
+    @include tablet {
+      padding: $gutter-sm calc($gutter-sm * 0.75);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &:hover:not(&--selected) {
+      background-color: $color-alabaster;
+    }
+
+    &--selected {
+      background-color: $color-mercury;
+    }
+
+    .table__cell {
+      flex: 1;
+      margin-bottom: $gutter-xs;
+
+      @include tablet {
+        margin-bottom: 0px;
+      }
+
+      .table__cell-header {
+        font-size: calc($fs-xs * 0.75);
+        margin-bottom: calc($gutter-xs / 2);
+        @include tablet {
+          display: none;
+        }
+      }
+      .table__cell-button {
+        width: 100%;
+      }
+    }
+  }
+}
