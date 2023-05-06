@@ -1,3 +1,5 @@
+@import "./breakpoints";
+@import "./fonts";
 @import "./vars";
 
 body {
@@ -61,5 +63,11 @@ body {
       width: 1020px !important;
       margin: auto !important;
     }
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: $color-mercury;
   }
 }

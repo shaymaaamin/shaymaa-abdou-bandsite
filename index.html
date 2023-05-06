@@ -10,7 +10,11 @@
   <body>
     <section class="topnav__wrapper">
       <section class="topnav page__section">
-        <img class="topnav__logo" src="./assets/logos/Logo-bandsite.svg" alt="Topnav Logo" />
+        <img
+          class="topnav__logo"
+          src="./assets/logos/Logo-bandsite.svg"
+          alt="Topnav Logo"
+        />
         <ul class="topnav__list">
           <li class="topnav__list-item topnav__list-item--active">
             <a href="./index.html" class="topnav__list-item-anchor">
@@ -37,7 +41,11 @@
       <section class="about page__section">
         <h2 class="about__title">About the Musicians</h2>
         <section class="about__inner">
-          <img class="about__img" src="./assets/images/band.jpg" alt="Band performing at a party" />
+          <img
+            class="about__img"
+            src="./assets/images/band.jpg"
+            alt="Band performing at a party"
+          />
           <figure class="about__quote-wrapper">
             <blockquote class="about__quote">
               We push each other to be the best. It’s not uncommon for one of us
@@ -136,26 +144,38 @@
     <section class="comments__wrapper">
       <section class="comments page__section">
         <h2 class="comments__title">Join the Conversation</h2>
-        <section class="comments__form-wrapper">
-          <div class="comment__avatar"></div>
-          <form class="comments__form">
-            <label for="name">NAME</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              class="comments__textboxButton"
-            />
-            <label for="comment">COMMENT</label>
-            <textarea
-              name="text"
-              placeholder="Add a new comment"
-              class="comments__textboxButton"
-            ></textarea>
-            <button type="submit" class="comments__textboxButton">
-              COMMENT
-            </button>
-          </form>
+        <section class="comments__form">
+          <div class="comment__card">
+            <div class="comment__avatar"></div>
+            <div class="comment__wrapper">
+              <form>
+                <div class="form-field">
+                  <label class="comment__name-label" for="comment__name-input"
+                    >NAME</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    class="comment__name-input"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="comment__text-label" for="comment__text-area"
+                    >COMMENT</label
+                  >
+                  <textarea
+                    name="text"
+                    placeholder="Add a new comment"
+                    class="comment__text-area"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <button type="submit" class="comment__button">COMMENT</button>
+              </form>
+            </div>
+          </div>
+          <div class="divider"></div>
         </section>
         <section class="comments__inner"></section>
       </section>
@@ -184,7 +204,11 @@
               />
             </section>
           </section>
-          <img class="footer__logo" src="./assets/logos/Logo-bandsite.svg" alt="Footer Logo" />
+          <img
+            class="footer__logo"
+            src="./assets/logos/Logo-bandsite.svg"
+            alt="Footer Logo"
+          />
         </section>
 
         <section class="footer__contact-wrapper">
@@ -232,7 +256,11 @@
             </a>
           </section>
         </section>
-        <img class="footer__logo" src="./assets/logos/Logo-bandsite.svg" alt="Footer Logo" />
+        <img
+          class="footer__logo"
+          src="./assets/logos/Logo-bandsite.svg"
+          alt="Footer Logo"
+        />
         <section class="footer__copyright">
           Copyright The Bees Knees © 2021 All Rights Reserved
         </section>

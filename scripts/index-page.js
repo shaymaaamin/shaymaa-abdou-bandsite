@@ -28,16 +28,33 @@ function displayComment(comment) {
   card.classList.add("comment__card");
   parentElement.appendChild(card);
 
-  ["avatar", "name", "timestamp", "text"].forEach((key) => {
-    const value = document.createElement("div");
-    value.classList.add("comment__" + key);
-    if (key === "timestamp") {
-      value.innerText = comment[key].toLocaleDateString();
-    } else {
-      value.innerText = comment[key] || "";
-    }
-    card.appendChild(value);
-  });
+  const avatar = document.createElement('div');
+  avatar.classList.add('comment__avatar');
+  card.appendChild(avatar);
+
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('comment__wrapper');
+  card.appendChild(wrapper);
+
+  const name = document.createElement('div');
+  name.classList.add('comment__name');
+  name.innerText = comment.name;
+  wrapper.appendChild(name);
+
+  const timestamp = document.createElement('div');
+  timestamp.classList.add('comment__timestamp');
+  timestamp.innerText = comment.timestamp.toLocaleDateString();
+  wrapper.appendChild(timestamp);
+
+  const text = document.createElement('div');
+  text.classList.add('comment__text');
+  text.innerText = comment.text;
+  wrapper.appendChild(text);
+
+  const divider = document.createElement('div');
+  divider.classList.add('divider');
+  parentElement.appendChild(divider);
+
 }
 
 comments.forEach(displayComment);
@@ -57,7 +74,7 @@ form.addEventListener("submit", (event) => {
     };
 
     clearComments();
-    comments.push(comment);
+    comments.unshift(comment);
     comments.forEach(displayComment);
 
     event.target.name.value = "";

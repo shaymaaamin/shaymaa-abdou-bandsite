@@ -13,6 +13,164 @@
   font-weight: 700;
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
 }
+body {
+  margin: 0px;
+  font-family: "Avenir Next";
+}
+body h1 {
+  margin-top: 0px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  body h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+body h2 {
+  margin-top: 0px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  body h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+body h3 {
+  margin-top: 0px;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  body h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+body .page__section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px 1rem;
+}
+@media screen and (min-width: 768px) {
+  body .page__section {
+    flex-direction: row !important;
+    margin: 0px 1.5rem !important;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body .page__section {
+    width: 1020px !important;
+    margin: auto !important;
+  }
+}
+body .divider {
+  height: 1px;
+  width: 100%;
+  background: #e1e1e1;
+}
+
+.topnav__wrapper {
+  background-color: #323232;
+  color: #e1e1e1;
+}
+.topnav__wrapper .topnav {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}
+.topnav__wrapper .topnav .topnav__logo {
+  margin: 1.5rem 1.5rem 1.5rem 0px;
+}
+@media screen and (min-width: 768px) {
+  .topnav__wrapper .topnav .topnav__logo {
+    margin: 2.25rem 2.25rem 2.25rem 0px !important;
+  }
+}
+.topnav__wrapper .topnav .topnav__list {
+  align-self: stretch;
+  list-style: none;
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+.topnav__wrapper .topnav .topnav__list .topnav__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5px solid #323232;
+  width: 50%;
+}
+.topnav__wrapper .topnav .topnav__list .topnav__list-item--active, .topnav__wrapper .topnav .topnav__list .topnav__list-item:hover {
+  color: #ffffff;
+  border-bottom: 5px solid #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+.topnav__wrapper .topnav .topnav__list .topnav__list-item .topnav__list-item-anchor {
+  color: currentColor;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .topnav__wrapper .topnav .topnav__list .topnav__list-item .topnav__list-item-anchor {
+    padding: 1.5rem;
+  }
+}
+
+.hero__wrapper {
+  height: 300px;
+  color: #ffffff;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (min-width: 768px) {
+  .hero__wrapper {
+    height: 500px !important;
+  }
+}
+.hero__wrapper .hero__backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+}
+.hero__wrapper .hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column !important;
+  height: 100%;
+  margin: 0px 1rem;
+}
+.hero__wrapper .hero .hero__title {
+  max-width: 60%;
+}
+
 .footer__wrapper {
   color: #ffffff;
   background-color: #323232;
@@ -124,159 +282,6 @@
   width: 100%;
 }
 
-body {
-  margin: 0px;
-  font-family: "Avenir Next";
-}
-body h1 {
-  margin-top: 0px;
-  font-weight: 700;
-}
-@media screen and (min-width: 768px) {
-  body h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  body h1 {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-  }
-}
-body h2 {
-  margin-top: 0px;
-  font-weight: 700;
-}
-@media screen and (min-width: 768px) {
-  body h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  body h2 {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-  }
-}
-body h3 {
-  margin-top: 0px;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  body h3 {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  body h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-body .page__section {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0px 1rem;
-}
-@media screen and (min-width: 768px) {
-  body .page__section {
-    flex-direction: row !important;
-    margin: 0px 1.5rem !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  body .page__section {
-    width: 1020px !important;
-    margin: auto !important;
-  }
-}
-
-.hero__wrapper {
-  height: 300px;
-  color: #ffffff;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-}
-@media screen and (min-width: 768px) {
-  .hero__wrapper {
-    height: 500px !important;
-  }
-}
-.hero__wrapper .hero__backdrop {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0.5;
-}
-.hero__wrapper .hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column !important;
-  height: 100%;
-  margin: 0px 1rem;
-}
-.hero__wrapper .hero .hero__title {
-  max-width: 60%;
-}
-
-.topnav__wrapper {
-  background-color: #323232;
-  color: #e1e1e1;
-}
-.topnav__wrapper .topnav {
-  display: flex;
-  align-items: center;
-  margin: 0px;
-}
-.topnav__wrapper .topnav .topnav__logo {
-  margin: 1.5rem 1.5rem 1.5rem 0px;
-}
-@media screen and (min-width: 768px) {
-  .topnav__wrapper .topnav .topnav__logo {
-    margin: 2.25rem 2.25rem 2.25rem 0px !important;
-  }
-}
-.topnav__wrapper .topnav .topnav__list {
-  align-self: stretch;
-  list-style: none;
-  display: flex;
-  padding: 0px;
-  margin: 0px;
-}
-.topnav__wrapper .topnav .topnav__list .topnav__list-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 5px solid #323232;
-  width: 50%;
-}
-.topnav__wrapper .topnav .topnav__list .topnav__list-item--active, .topnav__wrapper .topnav .topnav__list .topnav__list-item:hover {
-  color: #ffffff;
-  border-bottom: 5px solid #ffffff;
-  cursor: pointer;
-  font-weight: 700;
-}
-.topnav__wrapper .topnav .topnav__list .topnav__list-item .topnav__list-item-anchor {
-  color: currentColor;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .topnav__wrapper .topnav .topnav__list .topnav__list-item .topnav__list-item-anchor {
-    padding: 1.5rem;
-  }
-}
-
 .hero__wrapper {
   background-image: url("../assets/images/hero-shows.jpg");
 }
@@ -375,23 +380,10 @@ body .page__section {
   }
 }
 .shows_wrapper .shows .shows__inner .show__wrapper .show__button {
-  color: #ffffff;
-  background-color: #323232;
-  text-transform: uppercase;
-  text-align: center;
-  border: 0px;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
   width: 100%;
-  padding: 1rem;
-  border-radius: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   .shows_wrapper .shows .shows__inner .show__wrapper .show__button {
     width: 20%;
-    margin: 0px 2.5%;
-    padding: 1rem;
-    border-radius: 0.5rem;
   }
 }
