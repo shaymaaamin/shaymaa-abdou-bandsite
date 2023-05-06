@@ -98,6 +98,12 @@
       .gallery__img {
         width: 100%;
         margin-bottom: $gutter-xs;
+        filter: grayscale(1);
+
+        &:hover,
+        &:focus {
+          filter: grayscale(0);
+        }
 
         @include tablet {
           width: 30%;
