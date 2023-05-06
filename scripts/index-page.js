@@ -1,17 +1,17 @@
 const comments = [
   {
     name: "Connor Walton",
-    timestamp: new Date(2021, 11, 17),
+    timestamp: new Date(2023, 3, 10),
     text: "This is art. This is inexplicable magic expressed in the purest way,everything that makes up this majestic work deserves reverence. Let us appreciate this forwhat it is and what it contains.",
   },
   {
     name: "Emilie Beach",
-    timestamp: new Date(2021, 9, 10),
+    timestamp: new Date(2022, 11, 17),
     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
   },
   {
     name: "Miles Acosta",
-    timestamp: new Date(2020, 9, 10),
+    timestamp: new Date(2022, 2, 4),
     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
 ];
@@ -19,6 +19,59 @@ const comments = [
 function clearComments() {
   const parentElement = document.querySelector(".comments__inner");
   parentElement.innerHTML = "";
+}
+
+function formatTimestamp(timestamp) {
+  const currentTimestamp = new Date();
+  const diff = currentTimestamp - timestamp;
+  let seconds = Math.floor(diff / 1000),
+    minutes = Math.floor(seconds / 60),
+    hours = Math.floor(minutes / 60),
+    days = Math.floor(hours / 24),
+    months = Math.floor(days / 30),
+    years = Math.floor(days / 365);
+
+  seconds %= 60;
+  minutes %= 60;
+  hours %= 24;
+  days %= 30;
+  months %= 12;
+  
+  if (years) {
+    if (years === 1) {
+      return years + ' year ago';
+    } else {
+      return years + ' years ago';
+    }
+  } else if (months) {
+    if (months === 1) {
+      return months + ' month ago';
+    } else {
+      return months + ' months ago';
+    }
+  } else if (days) {
+    if (days === 1) {
+      return days + ' day ago';
+    } else {
+      return days + ' days ago';
+    }
+  } else if (hours) {
+    if (hours === 1) {
+      return hours + ' hour ago';
+    } else {
+      return hours + ' hours ago';
+    }
+  } else if (minutes) {
+    if (minutes === 1) {
+      return minutes + ' minute ago';
+    } else {
+      return minutes + ' minutes ago';
+    }
+  } else if (seconds < 10) {
+    return 'Just now';
+  } else {
+    return 'A few seconds ago';
+  }
 }
 
 function displayComment(comment) {
@@ -43,7 +96,7 @@ function displayComment(comment) {
 
   const timestamp = document.createElement('div');
   timestamp.classList.add('comment__timestamp');
-  timestamp.innerText = comment.timestamp.toLocaleDateString();
+  timestamp.innerText = formatTimestamp(comment.timestamp);
   wrapper.appendChild(timestamp);
 
   const text = document.createElement('div');
