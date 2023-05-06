@@ -1,8 +1,13 @@
 .hero__wrapper {
+  height: 300px;
   color: $color-white;
   position: relative;
   background-size: cover;
   background-position: center;
+
+  @include tablet {
+    height: 500px !important;
+  }
 
   .hero__backdrop {
     position: absolute;
@@ -16,25 +21,12 @@
     position: relative;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column !important;
     height: 100%;
-  }
-}
+    margin: 0px $gutter-xs;
 
-@media screen and (max-width: $mobileMaxWidth) {
-  .hero__wrapper {
-    height: 300px;
-    .hero {
-      margin: 0px $gutter-xs;
-      .hero__title {
-        max-width: 60%;
-      }
+    .hero__title {
+      max-width: 60%;
     }
-  }
-}
-
-@media screen and (min-width: $tabletMinWidth) {
-  .hero__wrapper {
-    height: 500px;
   }
 }

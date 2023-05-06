@@ -1,3 +1,4 @@
+@import "./partials/breakpoints";
 @import "./partials/fonts";
 @import "./partials/footer";
 @import "./partials/global";
@@ -11,31 +12,70 @@
 
 .about__wrapper {
   .about {
-    .about__img {
-      width: 100%;
+    padding-top: $gutter-xs;
+
+    @include tablet {
+      padding-top: $gutter-sm;
     }
 
-    .about__quote-wrapper {
-      margin-left: 0px;
-      margin-right: 0px;
-
-      .about__quote,
-      .about__quote-caption {
-        font-weight: $fw-demi;
+    .about__inner {
+      @include tablet {
+        margin: 0px $gutter-lg;
       }
 
-      .about__quote {
-        &:before {
-          content: open-quote;
+      .about__img {
+        width: 100%;
+      }
+
+      .about__quote-wrapper {
+        margin-left: 0px;
+        margin-right: 0px;
+
+        .about__quote,
+        .about__quote-caption {
+          font-weight: $fw-demi;
+          font-size: $fs-xs;
+          margin: $gutter-xs 0px;
+
+          @include tablet {
+            font-size: $fs-sm;
+            margin: $gutter-sm 0px;
+          }
         }
-        &:after {
-          content: close-quote;
+
+        .about__quote {
+          &:before {
+            content: open-quote;
+          }
+          &:after {
+            content: close-quote;
+          }
         }
       }
-    }
 
-    .about__subtitle {
-      margin-top: $gutter-lg;
+      .about__subtitle {
+        margin-top: $gutter-lg;
+      }
+
+      .about__content-wrapper {
+        @include tablet {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .about__content {
+          padding-bottom: $gutter-xs;
+
+          @include tablet {
+            width: 49%;
+            padding-bottom: $gutter-sm;
+          }
+
+          @include desktop {
+            padding-bottom: $gutter-md;
+          }
+        }
+      }
     }
   }
 }
@@ -46,225 +86,32 @@
     padding-top: $gutter-md;
     .gallery__img-wrapper {
       width: 100%;
-    }
-  }
-}
 
-.comments__wrapper {
-  .comments {
-    .comment__avatar {
-      padding: 15px;
-      height: 0px;
-      border-radius: 100%;
-      background-color: $color-silver;
-      margin-right: 16px;
-    }
-
-    .comments__form-wrapper {
-      display: flex;
-      width: 60%;
-
-      .comments__form {
+      @include tablet {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        border-bottom: 1px solid $color-silver;
-        margin-bottom: 15px;
-        .comments__textboxButton {
-          border-radius: 4px;
-          padding: 12px;
-          margin-bottom: 16px;
-          border: 1px solid $color-mercury;
-
-          &:focus {
-            border-color: gold;
-          }
-        }
-      }
-      button {
-        background-color: $color-black;
-        color: $color-white;
-        font-weight: $fw-bold;
-      }
-    }
-  }
-  .comments__inner {
-    .comment__card {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      align-items: center;
-      margin-bottom: 16px;
-      border-bottom: 1px solid $color-silver;
-      padding-bottom: 16px;
-
-      .comment__name {
-        font-weight: $fw-bold;
-      }
-      .comment__timestamp {
-        margin-left: auto;
-        color: $color-silver;
-      }
-      .comment__text {
-        margin-top: 16px;
-        margin-left: 46px;
-        width: 100%;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: $mobileMaxWidth) {
-  .about {
-    padding-top: $gutter-xs;
-    .about__inner {
-      .about__quote,
-      .about__quote-caption {
-        font-size: $fs-xs;
-        margin: $gutter-xs 0px;
-      }
-      .about__content-wrapper {
-        .about__content {
-          padding-bottom: $gutter-xs;
-        }
-      }
-    }
-  }
-
-  .gallery {
-    .gallery__img {
-      width: 100%;
-      margin-bottom: $gutter-xs;
-    }
-    .gallery__opacity {
-      width: 100%;
-      height: 100%;
-      background: black;
-      opacity: 0.5;
-    }
-  }
-}
-
-@media screen and (min-width: $tabletMinWidth) {
-  .about {
-    padding-top: $gutter-sm;
-    .about__inner {
-      margin: 0px $gutter-lg;
-
-      .about__quote,
-      .about__quote-caption {
-        font-size: $fs-sm;
-        margin: $gutter-sm 0px;
-      }
-
-      .about__content-wrapper {
-        display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
-
-        .about__content {
-          width: 49%;
-          padding-bottom: $gutter-sm;
-        }
       }
-    }
-  }
-
-  .comments__form-wrapper {
-    padding-left: 50px;
-    width: 80%;
-  }
-  .comments__inner {
-    padding-left: 50px;
-    width: 80%;
-  }
-  .comments__form-wrapper {
-    .comments__form {
-      .comments__textboxButton {
-        border-radius: 4px;
-        padding: 12px;
-        margin-bottom: 16px;
-        border: 1px solid #e1e1e1;
-        width: 80%;
-        flex-direction: column;
-        padding-right: 421px;
-      }
-    }
-  }
-
-  .gallery {
-    .gallery__img-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
 
       .gallery__img {
-        width: 30%;
-        margin-bottom: $gutter-sm;
-      }
-    }
-  }
+        width: 100%;
+        margin-bottom: $gutter-xs;
 
-  @media screen and (min-width: $desktopMinWidth) {
-    .about {
-      .about__inner {
-        .about__content-wrapper {
-          .about__content {
-            padding-bottom: $gutter-md;
-          }
+        @include tablet {
+          width: 30%;
+          margin-bottom: $gutter-sm;
         }
-      }
-    }
 
-    .gallery {
-      .gallery__img-wrapper {
-        .gallery__img {
+        @include desktop {
           margin-bottom: $gutter-md;
         }
       }
-    }
-    .comments__form-wrapper {
-      display: flex;
-      width: auto;
-      justify-content: center;
-      padding-left: 250px;
-    }
-    .comments__textboxButton {
-      display: flex;
-      width: 50%;
-      justify-content: center;
-      padding-left: 250px;
-    }
-    .comments__inner {
-      display: flex;
-      width: 50%;
-      justify-content: center;
-      padding-left: 250px;
-      flex-direction: column;
+      .gallery__opacity {
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.5;
+      }
     }
   }
-  .gallery__img {
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.5;
-  }
-  .gallery__img:hover {
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 1;
-  }
-}
-input[type="text"]:focus {
-  border: 3px solid #555;
-}
-.selected {
-  border-color: $color-mercury !important;
-}
-.error {
-  border-color: #d22d2d !important;
-}
-input[type="text"]:checked {
-  border: 3px solid #555;
 }

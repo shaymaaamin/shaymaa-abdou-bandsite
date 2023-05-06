@@ -1,30 +1,89 @@
+@import "./breakpoints";
+
 .footer__wrapper {
   color: $color-white;
   background-color: $color-black;
 
   .footer {
     .footer__social-wrapper {
+      @include tablet {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding-top: $gutter-sm !important;
+      }
+
+      @include desktop {
+        padding-top: $gutter-md !important;
+      }
+
       .footer__social {
         padding: $gutter-sm 0px;
+
+        @include tablet {
+          display: flex !important;
+        }
+
         .footer__social-title {
           margin: 0px;
           padding-bottom: $gutter-sm;
+
+          @include tablet {
+            padding: 0px !important;
+          }
         }
         .footer__social-icon-wrapper {
           display: flex;
           justify-content: space-between;
           width: 150px;
 
+          @include tablet {
+            margin-left: $gutter-sm !important;
+          }
+
+          @include desktop {
+            margin-left: $gutter-md !important;
+          }
+
           .footer__social-icon {
             height: 30px;
           }
         }
       }
+      > .footer__logo {
+        display: none;
+
+        @include tablet {
+          display: block !important;
+        }
+      }
+    }
+
+    > .footer__logo {
+      margin: $gutter-xs 0px;
+      display: block;
+      align-self: start;
+      @include tablet {
+        display: none !important;
+      }
     }
 
     .footer__contact-wrapper {
+      @include tablet {
+        display: flex !important;
+      }
+
       .footer__contact {
         margin-bottom: $gutter-md;
+
+        @include tablet {
+          margin-right: $gutter-sm !important;
+        }
+
+        @include desktop {
+          margin-right: $gutter-lg !important;
+        }
 
         .footer__contact-name,
         .footer__contact-company {
@@ -49,78 +108,9 @@
       }
     }
 
-    > .footer__logo {
-      margin: $gutter-xs 0px;
-    }
-
     .footer__copyright {
       font-size: calc($fs-xs / 1.25);
-    }
-  }
-}
-
-@media screen and (max-width: $mobileMaxWidth) {
-  .footer {
-    .footer__social-wrapper {
-      > .footer__logo {
-        display: none;
-      }
-    }
-    > .footer__logo {
-      display: block;
-    }
-  }
-}
-
-@media screen and (min-width: $tabletMinWidth) {
-  .footer {
-    .footer__social-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: $gutter-sm;
-
-      > .footer__logo {
-        display: block;
-      }
-
-      .footer__social {
-        display: flex;
-
-        .footer__social-title {
-          padding: 0px;
-        }
-        .footer__social-icon-wrapper {
-          margin-left: $gutter-sm;
-        }
-      }
-    }
-    .footer__contact-wrapper {
-      display: flex;
-      .footer__contact {
-        margin-right: $gutter-sm;
-      }
-    }
-    > .footer__logo {
-      display: none;
-    }
-  }
-}
-
-@media screen and (min-width: $desktopMinWidth) {
-  .footer {
-    .footer__social-wrapper {
-      padding-top: $gutter-md;
-      .footer__social {
-        .footer__social-icon-wrapper {
-          margin-left: $gutter-md;
-        }
-      }
-    }
-    .footer__contact-wrapper {
-      .footer__contact {
-        margin-right: $gutter-lg;
-      }
+      width: 100%;
     }
   }
 }

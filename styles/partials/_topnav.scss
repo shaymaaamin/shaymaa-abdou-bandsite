@@ -7,6 +7,15 @@
   .topnav {
     display: flex;
     align-items: center;
+    margin: 0px;
+
+    .topnav__logo {
+      margin: $gutter-sm $gutter-sm $gutter-sm 0px;
+
+      @include tablet {
+        margin: $gutter-md $gutter-md $gutter-md 0px !important;
+      }
+    }
 
     .topnav__list {
       align-self: stretch;
@@ -36,32 +45,13 @@
           display: flex;
           align-items: center;
           height: 100%;
+          padding: $gutter-xs;
+
+          @include tablet {
+            padding: $gutter-sm;
+          }
         }
       }
-    }
-  }
-}
-
-@media screen and (max-width: $mobileMaxWidth) {
-  .topnav {
-    margin: 0px;
-
-    .topnav__logo {
-      margin: $gutter-sm $gutter-sm $gutter-sm 0px;
-    }
-    .topnav__list-item-anchor {
-      padding: $gutter-xs;
-    }
-  }
-}
-
-@media screen and (min-width: $tabletMinWidth) {
-  .topnav {
-    .topnav__logo {
-      margin: $gutter-md $gutter-md $gutter-md 0px;
-    }
-    .topnav__list-item-anchor {
-      padding: $gutter-sm;
     }
   }
 }
