@@ -419,7 +419,7 @@ button:hover {
 }
 
 .hero__wrapper {
-  background-image: url("../assets/images/hero-shows.jpg");
+  background-image: url("/assets/images/hero-shows.jpg");
 }
 .hero__wrapper .hero__soundcloud {
   width: 50%;

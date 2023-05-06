@@ -9,7 +9,7 @@
 @import "./partials/vars";
 
 .hero__wrapper {
-  background-image: url("../assets/images/hero-bio.jpg");
+  background-image: url("/assets/images/hero-bio.jpg");
 }
 
 .about__wrapper {
@@ -149,7 +149,7 @@
       .comment__avatar {
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url("../assets/images/Mohan-muruge.jpg");
+        background-image: url("/assets/images/Mohan-muruge.jpg");
       }
     }
 
