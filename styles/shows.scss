@@ -7,6 +7,12 @@
 
 .hero__wrapper {
   background-image: url("../assets/images/hero-shows.jpg");
+  .hero__soundcloud {
+    width: 50%;
+    border-radius: calc($gutter-xs / 2);
+    border: 0px;
+    overflow: hidden;
+  }
 }
 
 .shows_wrapper {

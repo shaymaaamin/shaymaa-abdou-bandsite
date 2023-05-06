@@ -280,6 +280,12 @@ body .page__section {
 .hero__wrapper {
   background-image: url("../assets/images/hero-shows.jpg");
 }
+.hero__wrapper .hero__soundcloud {
+  width: 50%;
+  border-radius: 0.5rem;
+  border: 0px;
+  overflow: hidden;
+}
 
 .shows_wrapper .shows {
   margin: 0px;
