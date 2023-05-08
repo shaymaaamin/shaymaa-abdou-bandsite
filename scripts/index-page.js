@@ -115,7 +115,7 @@ comments.forEach(displayComment);
 // form.addEventListener("submit", (event) => {})
 // form.onsubmit = (event) => {}
 
-const form = document.querySelector(".comments__form");
+const form = document.querySelector(".comments__form form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
