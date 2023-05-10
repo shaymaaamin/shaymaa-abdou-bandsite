@@ -1,26 +1,3 @@
-const comments = [
-  {
-    name: "Connor Walton",
-    timestamp: new Date(2023, 3, 10),
-    text: "This is art. This is inexplicable magic expressed in the purest way,everything that makes up this majestic work deserves reverence. Let us appreciate this forwhat it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    timestamp: new Date(2022, 11, 17),
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    timestamp: new Date(2022, 2, 4),
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
-
-function clearComments() {
-  const parentElement = document.querySelector(".comments__inner");
-  parentElement.innerHTML = "";
-}
-
 function formatTimestamp(timestamp) {
   const currentTimestamp = new Date();
   const diff = currentTimestamp - timestamp;
@@ -36,7 +13,7 @@ function formatTimestamp(timestamp) {
   hours %= 24;
   days %= 30;
   months %= 12;
-  
+
   if (years) {
     if (years === 1) {
       return years + ' year ago';
@@ -74,7 +51,7 @@ function formatTimestamp(timestamp) {
   }
 }
 
-function displayComment(comment) {
+function displayComment(data) {
   const parentElement = document.querySelector(".comments__inner");
 
   const card = document.createElement("div");
@@ -91,17 +68,17 @@ function displayComment(comment) {
 
   const name = document.createElement('div');
   name.classList.add('comment__name');
-  name.innerText = comment.name;
+  name.innerText = data.name;
   wrapper.appendChild(name);
 
   const timestamp = document.createElement('div');
   timestamp.classList.add('comment__timestamp');
-  timestamp.innerText = formatTimestamp(comment.timestamp);
+  timestamp.innerText = formatTimestamp(data.timestamp);
   wrapper.appendChild(timestamp);
 
   const text = document.createElement('div');
   text.classList.add('comment__text');
-  text.innerText = comment.text;
+  text.innerText = data.comment;
   wrapper.appendChild(text);
 
   const divider = document.createElement('div');
@@ -110,28 +87,37 @@ function displayComment(comment) {
 
 }
 
-comments.forEach(displayComment);
+const loadComments = () => {
+  return getComments().then(comments => {
+    const parentElement = document.querySelector(".comments__inner");
+    parentElement.innerHTML = "";
 
-// form.addEventListener("submit", (event) => {})
-// form.onsubmit = (event) => {}
+    comments.sort((a, b) => b.timestamp - a.timestamp);
+    comments.forEach(displayComment);
+  });
+}
+
+// Load Comments on Page Load
+document.addEventListener('DOMContentLoaded', () => {
+  loadComments();
+});
 
 const form = document.querySelector(".comments__form form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (isFormValid(form)) {
-    const comment = {
-      name: event.target.name.value,
-      timestamp: new Date(),
-      text: event.target.text.value,
-    };
+    const name = event.target.name.value;
+    const comment = event.target.text.value;
 
-    clearComments();
-    comments.unshift(comment);
-    comments.forEach(displayComment);
-
-    event.target.name.value = "";
-    event.target.text.value = "";
+    // Add new comment through API
+    // Then reload all comments
+    addComment(name, comment).then(data => {
+      loadComments().then(() => {
+        event.target.name.value = "";
+        event.target.text.value = "";
+      });
+    });
   }
 });
 

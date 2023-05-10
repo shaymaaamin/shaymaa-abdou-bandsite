@@ -1,38 +1,15 @@
-let shows = [
-  {
-    DATE: "Mon Sept 06 2021",
-    VENUE: "Ronald Lane",
-    LOCATION: "San Francisco, CA",
-  },
-  {
-    DATE: "Tue Sept 21 2021",
-    VENUE: "Pier 3 East",
-    LOCATION: "San Francisco, CA",
-  },
-  {
-    DATE: "Fri Oct 15 2021",
-    VENUE: "View Lounge",
-    LOCATION: "San Francisco, CA",
-  },
-  {
-    DATE: "Sat Nov 06 2021",
-    VENUE: "Hyatt Agency",
-    LOCATION: "San Francisco, CA",
-  },
-  {
-    DATE: "Fri Nov 26 2021",
-    VENUE: "Moscow Center",
-    LOCATION: "San Francisco, CA",
-  },
-  {
-    DATE: "Wed Dec 15 2021",
-    VENUE: "Press Club",
-    LOCATION: "San Francisco, CA",
-  },
-];
+const loadShowDates = () => {
+  getShowDates().then(shows => {
+    shows.forEach(function (show) {
+      const date = new Date(show.date);
+      addShow(date.toDateString(), show.place, show.location);
+    });
+  });
+}
 
-shows.forEach(function (show) {
-  addShow(show.DATE, show.VENUE, show.LOCATION);
+// Load Show Dates on Page Load
+document.addEventListener('DOMContentLoaded', () => {
+  loadShowDates();
 });
 
 function addTableCell(row, label = '', value = '') {
