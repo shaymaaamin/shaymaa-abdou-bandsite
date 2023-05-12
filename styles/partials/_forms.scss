@@ -1,76 +1,75 @@
-@import "./breakpoints";
-@import "./vars";
+@import './mixins';
+@import './vars';
 
-form {
+.form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
 
-.form-field {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin-bottom: $gutter-xs;
+  &__field {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: $gutter-xs;
 
-  min-height: $gutter-md;
-  @include tablet {
-    min-height: $gutter-lg;
+    min-height: $gutter-md;
+    @include tablet {
+      min-height: $gutter-lg;
+    }
+
+    &-label {
+      color: $color-silver;
+      font-size: calc($fs-xs * 0.75);
+      font-weight: $fw-demi;
+      margin-bottom: calc($gutter-xs / 4);
+    }
+
+    &-input {
+      font-family: $font-family;
+      background-color: $color-alabaster;
+      border: 1px solid $color-mercury;
+      border-radius: calc($gutter-xs / 4);
+      padding: calc($gutter-xs * 0.75);
+      resize: none;
+
+      @include tablet {
+        padding: $gutter-xs;
+      }
+
+      &:invalid,
+      &.error {
+        border-color: $color-error;
+      }
+
+      &::placeholder {
+        color: black;
+      }
+    }
   }
 
-  label {
-    color: $color-silver;
+  &__button {
+    color: $color-white;
+    background-color: $color-black;
+    text-transform: uppercase;
+    text-align: center;
+    border: 0px;
+    font-weight: $fw-bold;
     font-size: calc($fs-xs * 0.75);
-    font-weight: $fw-demi;
-    margin-bottom: calc($gutter-xs / 4);
-  }
+    cursor: pointer;
 
-  input,
-  selec,
-  textarea {
-    background-color: $color-alabaster;
-    border: 1px solid $color-mercury;
-    border-radius: calc($gutter-xs / 4);
-    padding: calc($gutter-xs * 0.75);
+    height: 40px;
+    padding: 0px $gutter-xs;
+    border-radius: calc($gutter-xs / 2);
+
+    &:hover {
+      background-color: $color-dark-black;
+    }
 
     @include tablet {
-      padding: $gutter-xs;
+      align-self: end;
+      min-width: 150px;
+      padding: 0px calc($gutter-xs * 2);
     }
-
-    &:invalid,
-    &.error {
-      border-color: $color-error;
-    }
-
-    &::placeholder {
-      color: black;
-    }
-
-  }
-}
-
-button {
-  color: $color-white;
-  background-color: $color-black;
-  text-transform: uppercase;
-  text-align: center;
-  border: 0px;
-  font-weight: $fw-bold;
-  font-size: $fs-xs;
-  cursor: pointer;
-
-  height: 40px;
-  padding: 0px $gutter-xs;
-  border-radius: calc($gutter-xs / 2);
-
-  &:hover {
-    background-color: $color-dark-black;
-  }
-
-  @include tablet {
-    align-self: end;
-    min-width: 150px;
-    padding: 0px calc($gutter-xs * 2);
   }
 }

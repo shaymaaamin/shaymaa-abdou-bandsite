@@ -18,7 +18,8 @@ function addTableCell(row, label = '', value = '') {
   row.appendChild(cell);
 
   const header = document.createElement('div');
-  header.classList.add('table__cell-header');
+  header.classList.add('table__header-cell');
+  header.classList.add('table__header-cell--mobile');
   header.innerText = label;
   cell.appendChild(header);
 
@@ -36,6 +37,7 @@ function addTableButton(row, label = '') {
   row.appendChild(cell);
 
   const button = document.createElement('button');
+  button.classList.add('form__button');
   button.classList.add('table__cell-button');
   button.innerText = label;
   cell.appendChild(button);
@@ -51,10 +53,12 @@ function addShow(date, venue, location) {
   newRow.classList.add('table__row');
   table_body.appendChild(newRow);
 
-  addTableCell(newRow, 'DATE', date);
-  addTableCell(newRow, 'VENUE', venue);
-  addTableCell(newRow, 'LOCATION', location);
-  addTableButton(newRow, 'Buy Tickets');
+  const dateCell = addTableCell(newRow, 'DATE', date);
+  dateCell.classList.add('table__cell--bold');
+
+  const venueCell = addTableCell(newRow, 'VENUE', venue);
+  const locationCell = addTableCell(newRow, 'LOCATION', location);
+  const buttonCell = addTableButton(newRow, 'Buy Tickets');
 
   newRow.addEventListener('click', (event) => {
     const all_rows = table_body.querySelectorAll('.table__row');

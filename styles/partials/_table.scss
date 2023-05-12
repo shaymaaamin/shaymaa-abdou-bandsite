@@ -1,15 +1,10 @@
-@import "./breakpoints";
-@import "./vars";
+@import './mixins';
+@import './vars';
 
 .table {
-  .table__header-cell,
-  .table__cell-header {
-    color: $color-silver;
-    font-weight: $fw-demi;
-    flex: 1;
-  }
+  flex: 1;
 
-  .table__header {
+  &__header {
     display: none;
     padding: $gutter-sm calc($gutter-sm * 0.75);
 
@@ -17,9 +12,22 @@
       display: flex;
       justify-content: space-between;
     }
-  }
 
-  .table__row {
+    &-cell {
+      color: $color-silver;
+      font-weight: $fw-demi;
+      flex: 1;
+
+      &--mobile {
+        font-size: calc($fs-xs * 0.75);
+        margin-bottom: calc($gutter-xs / 2);
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+  }
+  &__row {
     padding: $gutter-xs;
     cursor: pointer;
 
@@ -37,25 +45,22 @@
     &--selected {
       background-color: $color-mercury;
     }
+  }
 
-    .table__cell {
-      flex: 1;
-      margin-bottom: $gutter-xs;
+  &__cell {
+    flex: 1;
+    margin-bottom: $gutter-xs;
 
-      @include tablet {
-        margin-bottom: 0px;
-      }
+    @include tablet {
+      margin-bottom: 0px;
+    }
 
-      .table__cell-header {
-        font-size: calc($fs-xs * 0.75);
-        margin-bottom: calc($gutter-xs / 2);
-        @include tablet {
-          display: none;
-        }
-      }
-      .table__cell-button {
-        width: 100%;
-      }
+    &-button {
+      width: 100%;
+    }
+
+    &--bold {
+      font-weight: $fw-demi;
     }
   }
 }

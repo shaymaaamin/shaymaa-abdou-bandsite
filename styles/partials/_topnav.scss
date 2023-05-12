@@ -1,55 +1,50 @@
-@import "./vars";
+@import './mixins';
+@import './vars';
 
-.topnav__wrapper {
+.topnav {
   background-color: $color-black;
   color: $color-mercury;
 
-  .topnav {
+  &__logo {
+    margin: $gutter-sm $gutter-sm $gutter-sm 0px;
+
+    @include tablet {
+      margin: $gutter-md $gutter-md $gutter-md 0px !important;
+    }
+  }
+
+  &__list {
+    align-self: stretch;
+    list-style: none;
     display: flex;
-    align-items: center;
+    padding: 0px;
     margin: 0px;
 
-    .topnav__logo {
-      margin: $gutter-sm $gutter-sm $gutter-sm 0px;
-
-      @include tablet {
-        margin: $gutter-md $gutter-md $gutter-md 0px !important;
-      }
-    }
-
-    .topnav__list {
-      align-self: stretch;
-      list-style: none;
+    &-item {
       display: flex;
-      padding: 0px;
-      margin: 0px;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 5px solid $color-black;
+      width: 50%;
 
-      .topnav__list-item {
+      &--active,
+      &:hover {
+        color: $color-white;
+        border-bottom: 5px solid $color-white;
+        cursor: pointer;
+        font-weight: $fw-bold;
+      }
+
+      &-anchor {
+        color: currentColor;
+        text-decoration: none;
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-bottom: 5px solid $color-black;
-        width: 50%;
+        height: 100%;
+        padding: $gutter-xs;
 
-        &--active,
-        &:hover {
-          color: $color-white;
-          border-bottom: 5px solid $color-white;
-          cursor: pointer;
-          font-weight: $fw-bold;
-        }
-
-        .topnav__list-item-anchor {
-          color: currentColor;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          height: 100%;
-          padding: $gutter-xs;
-
-          @include tablet {
-            padding: $gutter-sm;
-          }
+        @include tablet {
+          padding: $gutter-sm;
         }
       }
     }

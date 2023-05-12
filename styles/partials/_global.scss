@@ -1,20 +1,21 @@
-@import "./breakpoints";
+@import "./mixins";
 @import "./fonts";
 @import "./vars";
 
 body {
   margin: 0px;
-  font-family: "Avenir Next";
+  font-family: $font-family;
+  font-size: calc($fs-xs * 0.875);
+  line-height: calc(($fs-xs * 0.875) + 0.5rem);
 
   h1 {
     margin-top: 0px;
     font-weight: $fw-bold;
 
+    font-size: $fs-sm;
+    line-height: calc($fs-sm + 0.5rem);
+
     @include tablet {
-      font-size: $fs-sm;
-      line-height: calc($fs-sm + 0.5rem);
-    }
-    @include desktop {
       font-size: $fs-lg;
       line-height: calc($fs-lg + 0.5rem);
     }
@@ -24,10 +25,9 @@ body {
     margin-top: 0px;
     font-weight: $fw-bold;
 
-    @include tablet {
-      font-size: $fs-sm;
-      line-height: calc($fs-sm + 0.5rem);
-    }
+    font-size: $fs-sm;
+    line-height: calc($fs-sm + 0.5rem);
+
     @include desktop {
       font-size: $fs-md;
       line-height: calc($fs-md + 0.5rem);
@@ -38,14 +38,19 @@ body {
     margin-top: 0px;
     font-weight: $fw-demi;
 
-    @include tablet {
-      font-size: $fs-xs;
-      line-height: calc($fs-xs + 0.5rem);
-    }
+    font-size: calc($fs-xs * 0.875);
+    line-height: calc(($fs-xs * 0.875) + 0.5rem);
+
     @include desktop {
       font-size: $fs-sm;
       line-height: calc($fs-sm + 0.5rem);
     }
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: $color-mercury;
   }
 
   .page__section {
@@ -55,19 +60,13 @@ body {
     margin: 0px $gutter-xs;
 
     @include tablet {
-      flex-direction: row !important;
-      margin: 0px $gutter-sm !important;
+      flex-direction: row;
+      margin: 0px $gutter-sm;
     }
 
     @include desktop {
-      width: 1020px !important;
+      width: 1020px;
       margin: auto !important;
     }
-  }
-
-  .divider {
-    height: 1px;
-    width: 100%;
-    background: $color-mercury;
   }
 }

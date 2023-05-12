@@ -1,11 +1,18 @@
-@import "./breakpoints";
+@import './mixins';
+@import './vars';
 
-.footer__wrapper {
+.footer {
   color: $color-white;
   background-color: $color-black;
 
-  .footer {
-    .footer__social-wrapper {
+  &__social {
+    padding: $gutter-sm 0px;
+
+    @include tablet {
+      display: flex !important;
+    }
+
+    &-wrapper {
       @include tablet {
         width: 100% !important;
         display: flex !important;
@@ -17,100 +24,91 @@
       @include desktop {
         padding-top: $gutter-md !important;
       }
-
-      .footer__social {
-        padding: $gutter-sm 0px;
-
-        @include tablet {
-          display: flex !important;
-        }
-
-        .footer__social-title {
-          margin: 0px;
-          padding-bottom: $gutter-sm;
-
-          @include tablet {
-            padding: 0px !important;
-          }
-        }
-        .footer__social-icon-wrapper {
-          display: flex;
-          justify-content: space-between;
-          width: 150px;
-
-          @include tablet {
-            margin-left: $gutter-sm !important;
-          }
-
-          @include desktop {
-            margin-left: $gutter-md !important;
-          }
-
-          .footer__social-icon {
-            height: 30px;
-          }
-        }
-      }
-      > .footer__logo {
-        display: none;
-
-        @include tablet {
-          display: block !important;
-        }
-      }
     }
 
-    > .footer__logo {
-      margin: $gutter-xs 0px;
-      display: block;
-      align-self: start;
+    &-title {
+      margin: 0px;
+      padding-bottom: $gutter-sm;
+
       @include tablet {
-        display: none !important;
+        padding: 0px !important;
       }
     }
-
-    .footer__contact-wrapper {
-      @include tablet {
-        display: flex !important;
-      }
-
-      .footer__contact {
-        margin-bottom: $gutter-md;
+    &-icon {
+      height: 30px;
+      &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
 
         @include tablet {
-          margin-right: $gutter-sm !important;
+          margin-left: $gutter-sm !important;
         }
 
         @include desktop {
-          margin-right: $gutter-lg !important;
-        }
-
-        .footer__contact-name,
-        .footer__contact-company {
-          font-size: $fs-xs;
-          margin: calc($gutter-xs / 2) 0px;
-        }
-
-        .footer__contact-info {
-          margin: $gutter-xs 0px;
-
-          p {
-            margin: 0px;
-          }
-        }
-
-        .footer__contact-email {
-          margin: calc($gutter-xs / 2) 0px;
-          color: $color-white;
-          text-decoration: none;
-          cursor: pointer;
+          margin-left: $gutter-md !important;
         }
       }
     }
+  }
 
-    .footer__copyright {
-      font-size: calc($fs-xs / 1.25);
-      width: 100%;
+  &__logo {
+    margin: $gutter-xs 0px;
+    display: none;
+    align-self: start;
+
+    @include tablet {
+      display: block;
     }
+
+    &--mobile {
+      display: block;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__contact {
+    margin-bottom: $gutter-md;
+    @include tablet {
+      margin-right: $gutter-sm !important;
+    }
+
+    @include desktop {
+      margin-right: $gutter-lg !important;
+    }
+
+    &-wrapper {
+      @include tablet {
+        display: flex !important;
+      }
+    }
+
+    &-name,
+    &-company {
+      font-size: $fs-xs;
+      margin: calc($gutter-xs / 2) 0px;
+    }
+
+    &-info {
+      margin: $gutter-xs 0px;
+
+      p {
+        margin: 0px;
+      }
+    }
+
+    &-email {
+      margin: calc($gutter-xs / 2) 0px;
+      color: $color-white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  &__copyright {
+    font-size: calc($fs-xs / 1.25);
+    width: 100%;
   }
 }

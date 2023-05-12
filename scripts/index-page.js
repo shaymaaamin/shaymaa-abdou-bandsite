@@ -52,10 +52,10 @@ function formatTimestamp(timestamp) {
 }
 
 function displayComment(data) {
-  const parentElement = document.querySelector(".comments__inner");
+  const parentElement = document.querySelector(".comments__list");
 
   const card = document.createElement("div");
-  card.classList.add("comment__card");
+  card.classList.add("comment");
   parentElement.appendChild(card);
 
   const avatar = document.createElement('div');
@@ -72,14 +72,14 @@ function displayComment(data) {
   wrapper.appendChild(name);
 
   const timestamp = document.createElement('div');
-  timestamp.classList.add('comment__timestamp');
+  timestamp.classList.add('comment__date');
   timestamp.innerText = formatTimestamp(data.timestamp);
   wrapper.appendChild(timestamp);
 
-  const text = document.createElement('div');
-  text.classList.add('comment__text');
-  text.innerText = data.comment;
-  wrapper.appendChild(text);
+  const content = document.createElement('div');
+  content.classList.add('comment__content');
+  content.innerText = data.comment;
+  wrapper.appendChild(content);
 
   const divider = document.createElement('div');
   divider.classList.add('divider');
@@ -89,7 +89,7 @@ function displayComment(data) {
 
 const loadComments = () => {
   return getComments().then(comments => {
-    const parentElement = document.querySelector(".comments__inner");
+    const parentElement = document.querySelector(".comments__list");
     parentElement.innerHTML = "";
 
     comments.sort((a, b) => b.timestamp - a.timestamp);

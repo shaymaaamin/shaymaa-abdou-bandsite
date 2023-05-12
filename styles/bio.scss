@@ -5,88 +5,108 @@
 @import "./partials/hero";
 @import "./partials/footer";
 
-@import "./partials/breakpoints";
+@import "./partials/mixins";
 @import "./partials/vars";
 
-.hero__wrapper {
+.hero {
   background-image: url("../assets/images/hero-bio.jpg");
 }
 
-.about__wrapper {
-  .about {
-    padding-top: $gutter-xs;
+.about {
+  padding-top: $gutter-xs;
 
+  @include tablet {
+    padding-top: $gutter-sm;
+  }
+
+  &__inner {
     @include tablet {
-      padding-top: $gutter-sm;
+      margin: 0px $gutter-lg;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__quote {
+    &-wrapper {
+      margin-left: 0px;
+      margin-right: 0px;
     }
 
-    .about__inner {
+    &,
+    &-caption {
+      font-weight: $fw-demi;
+      font-size: $fs-xs;
+      margin: $gutter-xs 0px;
+
       @include tablet {
-        margin: 0px $gutter-lg;
+        font-size: $fs-sm;
+        margin: $gutter-sm 0px;
       }
+    }
 
-      .about__img {
-        width: 100%;
-      }
+    &:before {
+      content: open-quote;
+    }
+    &:after {
+      content: close-quote;
+    }
+  }
 
-      .about__quote-wrapper {
-        margin-left: 0px;
-        margin-right: 0px;
+  &__subtitle {
+    margin-top: $gutter-lg;
+  }
 
-        .about__quote,
-        .about__quote-caption {
-          font-weight: $fw-demi;
-          font-size: $fs-xs;
-          margin: $gutter-xs 0px;
+  &__content {
+    padding-bottom: $gutter-xs;
 
-          @include tablet {
-            font-size: $fs-sm;
-            margin: $gutter-sm 0px;
-          }
-        }
+    @include tablet {
+      width: 49%;
+      padding-bottom: $gutter-sm;
+    }
 
-        .about__quote {
-          &:before {
-            content: open-quote;
-          }
-          &:after {
-            content: close-quote;
-          }
-        }
-      }
+    @include desktop {
+      padding-bottom: $gutter-md;
+    }
 
-      .about__subtitle {
-        margin-top: $gutter-lg;
-      }
-
-      .about__content-wrapper {
-        @include tablet {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .about__content {
-          padding-bottom: $gutter-xs;
-
-          @include tablet {
-            width: 49%;
-            padding-bottom: $gutter-sm;
-          }
-
-          @include desktop {
-            padding-bottom: $gutter-md;
-          }
-        }
+    &-wrapper {
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
       }
     }
   }
 }
 
-.gallery__wrapper {
-  background-color: $color-alabaster;
-  .gallery {
-    padding-top: $gutter-md;
-    .gallery__img-wrapper {
+.gallery {
+  padding-top: $gutter-md;
+
+  &__wrapper {
+    background-color: $color-alabaster;
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: $gutter-xs;
+    filter: grayscale(1);
+
+    &:hover,
+    &:focus {
+      filter: grayscale(0);
+    }
+
+    @include tablet {
+      width: 30%;
+      margin-bottom: $gutter-sm;
+    }
+
+    @include desktop {
+      margin-bottom: $gutter-md;
+    }
+
+    &-wrapper {
       width: 100%;
 
       @include tablet {
@@ -94,101 +114,70 @@
         flex-wrap: wrap;
         justify-content: space-between;
       }
-
-      .gallery__img {
-        width: 100%;
-        margin-bottom: $gutter-xs;
-        filter: grayscale(1);
-
-        &:hover,
-        &:focus {
-          filter: grayscale(0);
-        }
-
-        @include tablet {
-          width: 30%;
-          margin-bottom: $gutter-sm;
-        }
-
-        @include desktop {
-          margin-bottom: $gutter-md;
-        }
-      }
-      .gallery__opacity {
-        width: 100%;
-        height: 100%;
-        background: black;
-        opacity: 0.5;
-      }
     }
   }
 }
 
-.comments__wrapper {
-  .comments {
-    padding-bottom: $gutter-xs;
+.comments {
+  padding-bottom: $gutter-xs;
 
-    .comments__title {
-      width: 100%;
+  &__title {
+    width: 100%;
+  }
+
+  &__form,
+  &__list {
+    margin: auto;
+    width: 100%;
+
+    @include tablet {
+      width: 80%;
+    }
+    @include desktop {
+      width: 60%;
+    }
+  }
+}
+
+.comment {
+  display: flex;
+  margin: $gutter-sm 0px;
+
+  &__avatar {
+    border-radius: 50%;
+    background-color: $color-mercury;
+
+    height: $gutter-md;
+    width: $gutter-md;
+
+    @include tablet {
+      height: $gutter-lg;
+      width: $gutter-lg;
     }
 
-    .comments__form,
-    .comments__inner {
-      margin: auto;
-      width: 100%;
-
-      @include tablet {
-        width: 80%;
-      }
-      @include desktop {
-        width: 60%;
-      }
+    &--form {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("../assets/images/Mohan-muruge.jpg");
     }
+  }
 
-    .comments__form {
-      .comment__avatar {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-image: url("../assets/images/Mohan-muruge.jpg");
-      }
-    }
-
-    .comment__card {
-      display: flex;
-      margin: $gutter-sm 0px;
-
-      .comment__avatar {
-        border-radius: 50%;
-        background-color: $color-mercury;
-
-        height: $gutter-md;
-        width: $gutter-md;
-
-        @include tablet {
-          height: $gutter-lg;
-          width: $gutter-lg;
-        }
-      }
-
-      .comment__wrapper {
-        margin-left: $gutter-xs;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        flex: 1;
-
-        .comment__name {
-          font-weight: $fw-bold;
-        }
-        .comment__timestamp {
-          margin-left: auto;
-          color: $color-silver;
-        }
-        .comment__text {
-          width: 100%;
-          margin-top: $gutter-xs;
-        }
-      }
-    }
+  &__wrapper {
+    margin-left: $gutter-xs;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  &__name {
+    font-weight: $fw-bold;
+  }
+  &__date {
+    margin-left: auto;
+    color: $color-silver;
+  }
+  &__content {
+    width: 100%;
+    margin-top: $gutter-xs;
   }
 }

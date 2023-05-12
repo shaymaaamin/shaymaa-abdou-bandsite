@@ -17,3 +17,20 @@
     @content;
   }
 }
+
+@mixin pageSection() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px $gutter-xs;
+
+  @include tablet {
+    flex-direction: row;
+    margin: 0px $gutter-sm;
+  }
+
+  @include desktop {
+    width: 1020px;
+    margin: auto !important;
+  }
+}

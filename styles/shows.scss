@@ -6,12 +6,13 @@
 @import "./partials/hero";
 @import "./partials/footer";
 
-@import "./partials/breakpoints";
+@import "./partials/mixins";
 @import "./partials/vars";
 
-.hero__wrapper {
+.hero {
   background-image: url("../assets/images/hero-shows.jpg");
-  .hero__soundcloud {
+
+  &__soundcloud {
     width: 50%;
     border-radius: calc($gutter-xs / 2);
     border: 0px;
@@ -19,45 +20,24 @@
   }
 }
 
-.shows_wrapper {
-  .shows {
-    margin: 0px;
-    padding-top: $gutter-xs;
+.shows {
+  margin: 0px;
+  padding-top: $gutter-xs;
+
+  @include tablet {
+    padding-top: $gutter-sm;
+  }
+  
+  &__title {
+    margin: 0px $gutter-xs;
 
     @include tablet {
-      padding-top: $gutter-sm;
+      width: 100%;
     }
 
-    .shows__title {
-      margin: 0px $gutter-xs;
-
-      @include tablet {
-        width: 100%;
-      }
-
-      @include desktop {
-        width: 25%;
-        margin: 0px;
-      }
-    }
-
-    .shows__inner {
-      margin-bottom: $gutter-xs;
-      flex: 1;
-
-      @include tablet {
-        margin-bottom: $gutter-lg;
-      }
-
-      .shows__table {
-        .table__row {
-          .table__cell:first-child {
-            .table__cell-content {
-              font-weight: $fw-demi;
-            }
-          }
-        }
-      }
+    @include desktop {
+      width: 25%;
+      margin: 0px;
     }
   }
 }
