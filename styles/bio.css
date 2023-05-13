@@ -492,3 +492,25 @@ body .page__section {
   width: 100%;
   margin-top: 1rem;
 }
+.comment__likes {
+  font-size: 0.75rem;
+  border: 1px solid #323232;
+  border-radius: 0.5rem;
+  padding: 0.25rem 1rem;
+}
+.comment__button {
+  min-width: 0px;
+  padding: 0px 1rem;
+  margin-left: 0.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.comment__button-wrapper {
+  margin-left: auto;
+}
+.comment__button--delete {
+  background-image: url("../assets/icons/icon-delete.svg");
+}
+.comment__button--like {
+  background-image: url("../assets/icons/icon-like.svg");
+}

@@ -180,4 +180,31 @@
     width: 100%;
     margin-top: $gutter-xs;
   }
+
+  &__likes {
+    font-size: calc($fs-xs * 0.75);
+    border: 1px solid $color-black;
+    border-radius: calc($gutter-xs / 2);
+    padding: calc($gutter-xs / 4) $gutter-xs;
+  }
+
+  &__button {
+    min-width: 0px;
+    padding: 0px $gutter-xs;
+    margin-left: calc($gutter-xs / 2);
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &-wrapper {
+      margin-left: auto;
+    }
+
+    &--delete {
+      background-image: url("../assets/icons/icon-delete.svg");
+    }
+    &--like {
+      background-image: url("../assets/icons/icon-like.svg");
+    }
+  }
 }

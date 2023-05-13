@@ -19,3 +19,13 @@ const addComment = (name, comment) => {
     const data = { name, comment };
     return axios.post(url, data).then(response => response.data);
 }
+
+const likeComment = (id) => {
+    const url = getURL('/comments/' + id + '/like');
+    return axios.put(url).then(response => response.data);
+}
+
+const deleteComment = (id) => {
+    const url = getURL('/comments/' + id);
+    return axios.delete(url).then(response => response.data);
+}

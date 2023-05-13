@@ -81,6 +81,35 @@ function displayComment(data) {
   content.innerText = data.comment;
   wrapper.appendChild(content);
 
+  const likes = document.createElement('div');
+  likes.classList.add('comment__likes');
+  likes.innerText = data.likes + ' likes';
+  wrapper.appendChild(likes);
+
+  const buttons = document.createElement('div');
+  buttons.classList.add('comment__button-wrapper');
+  wrapper.appendChild(buttons);
+
+  const deleteButton = document.createElement('button');
+  deleteButton.classList.add('form__button');
+  deleteButton.classList.add('comment__button');
+  deleteButton.classList.add('comment__button--delete');
+  deleteButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    deleteComment(data.id).then(() => loadComments());
+  });
+  buttons.appendChild(deleteButton);
+
+  const likeButton = document.createElement('button');
+  likeButton.classList.add('form__button');
+  likeButton.classList.add('comment__button');
+  likeButton.classList.add('comment__button--like');
+  likeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    likeComment(data.id).then(() => loadComments());
+  });
+  buttons.appendChild(likeButton);
+
   const divider = document.createElement('div');
   divider.classList.add('divider');
   parentElement.appendChild(divider);
